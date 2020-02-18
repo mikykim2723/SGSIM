@@ -27,6 +27,7 @@ print(' [*] Waiting for logs. To exit press CTRL+C')
 
 def callback(ch, method, properties, body):
     print(" [x] %r:%r:%r:%r" % (method.routing_key, body, ch, properties))
+    #ch, properties 는 제외 하고 출력해도 됨( 일부러 확인하기 위해서 적어둠) 
     df = pd.DataFrame(data=np.array([[0, 0, 0, body],
                                      [0, 0, 0, body],
                                      [1, 1, 1, body],
