@@ -10,7 +10,7 @@ channel.exchange_declare(exchange='test', exchange_type='direct')
 result = channel.queue_declare(queue='', exclusive=True)
 queue_name = result.method.queue
 print(queue_name)
-
+#라우팅 키 캆 상단에 표시 하기 위해서 프린트로 
 channel.queue_bind(
     exchange='test', queue=queue_name, routing_key='KEY')
 
